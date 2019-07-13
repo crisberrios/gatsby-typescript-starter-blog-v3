@@ -6,6 +6,7 @@ module.exports = {
     author: '@gatsbyjs',
   },
   plugins: [
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -65,5 +66,16 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        postCssPlugins: [
+          require('postcss-import'),
+          require('postcss-discard-comments'),
+          require('postcss-reporter'),
+          require('postcss-normalize')
+        ]
+      }
+    },
   ],
 }

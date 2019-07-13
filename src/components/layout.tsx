@@ -1,3 +1,4 @@
+import * as styles from '#styles/base.css'
 import { graphql, StaticQuery } from 'gatsby'
 import * as React from 'react'
 
@@ -17,13 +18,7 @@ const Layout: React.SFC = ({ children }) => (
     render={data => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: '0 auto',
-            maxWidth: '40rem',
-            padding: '0px 1.0875rem 1.45rem',
-            paddingTop: 0,
-          }}
+        <div className={styles.main}
         >
           {children}
         </div>
