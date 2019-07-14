@@ -1,10 +1,10 @@
 import * as styles from '#styles/base.css'
-import { graphql, StaticQuery } from 'gatsby'
+import { graphql, Link, StaticQuery } from 'gatsby'
 import * as React from 'react'
 
 import Header from './header'
 
-const Layout: React.SFC = ({ children }) => (
+const Layout: React.FunctionComponent = ({ children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -17,10 +17,16 @@ const Layout: React.SFC = ({ children }) => (
     `}
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div className={styles.main}
-        >
-          {children}
+        <div className="with-sidebar">
+          <div>
+            <Header />
+            <main className={styles.dummy}>
+              <h1>
+                <Link to="/">{data.site.siteMetadata.title}</Link>
+              </h1>
+              <div className="center-container">{children}</div>
+            </main>
+          </div>
         </div>
       </>
     )}

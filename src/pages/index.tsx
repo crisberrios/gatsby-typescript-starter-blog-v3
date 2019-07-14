@@ -41,21 +41,15 @@ class IndexPage extends React.Component<IndexPageProps, {}> {
           title="All posts"
           keywords={['blog', 'gatsby', 'javascript', 'react']}
         />
-        <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
+        <div className="max-width:50% margin:auto">
           <Image />
         </div>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
             <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: '0.25rem',
-                }}
-              >
-                <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-                  {title}
-                </Link>
+              <h3>
+                <Link to={node.fields.slug}>{title}</Link>
               </h3>
               <small>{node.frontmatter.date}</small>
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />

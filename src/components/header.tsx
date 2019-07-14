@@ -5,33 +5,16 @@ interface HeaderProps {
   siteTitle?: string
 }
 
-const Header: React.SFC<HeaderProps> = ({ siteTitle }) => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: '40rem',
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+const Header: React.FunctionComponent<HeaderProps> = () => (
+  <header>
+    <div className="center-container">
+      <nav className="max-width:50% margin:auto">
+        <ul>
+          <li>Nav</li>
+        </ul>
+      </nav>
     </div>
-  </div>
+  </header>
 )
 
 Header.defaultProps = {
