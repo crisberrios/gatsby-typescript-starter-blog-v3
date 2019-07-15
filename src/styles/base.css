@@ -19,7 +19,9 @@
   --s3: calc(var(--s2) * var(--ratio));
   --s4: calc(var(--s3) * var(--ratio));
   --s5: calc(var(--s4) * var(--ratio));
-  font-size: calc(1rem + 0.5vw);
+  --font-size-base: calc(1rem + 0.5vw);
+  --sidebar-min-width: 15rem;
+  font-size: var(--font-size-base);
 }
 
 * {
@@ -52,6 +54,10 @@ footer {
   max-width: 50%;
 }
 
+.max-width\:none {
+  max-width: none;
+}
+
 .margin\:auto {
   margin: auto;
 }
@@ -76,12 +82,13 @@ footer {
   outline: var(--s-5) solid black;
   background-color: gray;
   padding: var(--s-1);
+  flex-basis: 15rem;
 }
 
 .with-sidebar > * > :last-child {
   flex-basis: 0;
   flex-grow: 999;
-  min-width: calc(75% - var(--s1));
+  min-width: calc(66% - var(--s1));
   padding: 0 calc(var(--s1));
 }
 
@@ -94,20 +101,81 @@ footer {
 }
 
 .font-size\:sm-1 {
-    font-size: .9em;
+  font-size: calc(var(--font-size-base) * 0.9);
 }
 .font-size\:sm-2 {
-    font-size: .8em;
+  font-size: calc(var(--font-size-base) * 0.8);
 }
 .font-size\:sm-3 {
-    font-size: .6em;
+  font-size: calc(var(--font-size-base) * 0.65);
+}
+.font-size\:sm-4 {
+  font-size: calc(var(--font-size-base) * 0.55);
 }
 .font-size\:lg-1 {
-    font-size: 1.1em;
+  font-size: calc(var(--font-size-base) * 1.1);
 }
 .font-size\:lg-2 {
-    font-size: 1.2em;
+  font-size: calc(var(--font-size-base) * 1.2);
 }
 .font-size\:lg-3 {
-    font-size: 1.4em;
+  font-size: calc(var(--font-size-base) * 1.4);
+}
+
+.margin-bottom\:sm-1 {
+  margin-bottom: var(--s-5);
+}
+
+.stack {
+  --space: 1rem;
+}
+
+.stack > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.stack > * + * {
+  margin-top: var(--space);
+}
+
+.stack > * + .stack-small-gap,
+.stack.stack-small-gap {
+  --space: 0.5rem;
+}
+
+.stack > * + .stack-no-gap,
+.stack.stack-no-gap {
+  --space: 0;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.align-items\:center {
+  align-items: center;
+}
+
+.justify-content\:center {
+    justify-content: space-evenly;
+}
+
+.flex-wrap.flex-wrap-sidebar > * {
+    min-width: fit-content;
+    width: calc((var(--sidebar-min-width) - 100%) * 1000);
+    max-width: 100%
+}
+
+.mobile-25-desktop-100 {
+  min-width: 25%;
+  width: calc((var(--sidebar-min-width) - 100%) * 1000);
+  max-width: 100%;
+}
+
+.mobile-75-desktop-100 {
+  min-width: 75%;
+  width: calc((var(--sidebar-min-width) - 100%) * 1000);
+  max-width: 100%;
 }
