@@ -41,9 +41,7 @@ class IndexPage extends React.Component<IndexPageProps, {}> {
           title="All posts"
           keywords={['blog', 'gatsby', 'javascript', 'react']}
         />
-        <div className="max-width:50% margin:auto">
-          <Image />
-        </div>
+        <h2>All Articles</h2>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (

@@ -1,11 +1,15 @@
 @import './header.css';
+@import url('https://fonts.googleapis.com/css?family=Oswald:600|Work+Sans&display=swap');
 @import-normalize;
 @import-sanitize;
 
 :root {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: white;
+  font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  --header-font-family: 'Oswald', -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+  --base-color: #353839;
   --measure: 65ch;
   --ratio: 1.4;
   --s-5: calc(var(--s-4) / var(--ratio));
@@ -22,6 +26,8 @@
   --font-size-base: calc(1rem + 0.5vw);
   --sidebar-min-width: 15rem;
   font-size: var(--font-size-base);
+  color: var(--base-color);
+  background-color: white;
 }
 
 * {
@@ -36,6 +42,30 @@ nav,
 main,
 footer {
   max-width: none;
+}
+html,
+body,
+#___gatsby {
+  height: 100%;
+}
+
+div[role='group'][tabindex] {
+  flex: 1;
+}
+
+#___gatsby {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+nav {
+  font-family: var(--header-font-family);
 }
 
 .max-width\:measure\/2 {
@@ -64,32 +94,33 @@ footer {
 
 .with-sidebar {
   overflow: hidden;
+  height: 100%;
 }
 
 .with-sidebar > * {
   display: flex;
   flex-wrap: wrap;
-  margin: calc(var(--s1) / 2 * -1);
+  height: 100%;
 }
 
 .with-sidebar > * > * {
-  margin: calc(var(--s1) / 2);
   flex-grow: 1;
 }
 
-.with-sidebar > * > :first-child {
+.with-sidebar > * > header {
   color: white;
-  outline: var(--s-5) solid black;
+  outline: var(--s-5) solid var(--base-color);
   background-color: gray;
   padding: var(--s-1);
   flex-basis: 15rem;
 }
 
-.with-sidebar > * > :last-child {
+.with-sidebar > * > main {
   flex-basis: 0;
   flex-grow: 999;
   min-width: calc(66% - var(--s1));
   padding: 0 calc(var(--s1));
+  height: 100vh - calc(var(--s1) / 2);
 }
 
 .center-container {
@@ -159,13 +190,13 @@ footer {
 }
 
 .justify-content\:center {
-    justify-content: space-evenly;
+  justify-content: space-evenly;
 }
 
 .flex-wrap.flex-wrap-sidebar > * {
-    min-width: fit-content;
-    width: calc((var(--sidebar-min-width) - 100%) * 1000);
-    max-width: 100%
+  min-width: fit-content;
+  width: calc((var(--sidebar-min-width) - 100%) * 1000);
+  max-width: 100%;
 }
 
 .mobile-25-desktop-100 {
@@ -178,4 +209,12 @@ footer {
   min-width: 75%;
   width: calc((var(--sidebar-min-width) - 100%) * 1000);
   max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: dodgerblue;
+}
+a:hover {
+  text-decoration: underline;
 }

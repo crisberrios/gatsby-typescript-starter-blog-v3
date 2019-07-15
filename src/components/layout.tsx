@@ -5,7 +5,6 @@ import * as React from 'react'
 import Header from './header'
 
 const Layout: React.FunctionComponent = ({ children }) => (
-  <>
     <div className="with-sidebar">
       <div>
         <Header />
@@ -14,7 +13,6 @@ const Layout: React.FunctionComponent = ({ children }) => (
         </main>
       </div>
     </div>
-  </>
 )
 
 export default Layout
