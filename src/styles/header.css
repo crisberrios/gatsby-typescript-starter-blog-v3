@@ -5,3 +5,7 @@
     border-radius: 50%;
     border: var(--s-5) solid rebeccapurple;
 }
+
+.with-sidebar header a {
+    color: white;
+}

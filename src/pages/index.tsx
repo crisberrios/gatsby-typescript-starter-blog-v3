@@ -48,7 +48,7 @@ class IndexPage extends React.Component<IndexPageProps, {}> {
           const title = node.frontmatter.title || node.fields.slug
           return (
             <div key={node.fields.slug}>
-              <h3>
+              <h3 className="margin-bottom:sm-1">
                 <Link to={node.fields.slug}>{title}</Link>
               </h3>
               <small>{node.frontmatter.date}</small>
