@@ -10,7 +10,8 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Oswald:600', 'Work Sans']
+          families: ['Oswald:600&display=swap', 'Work Sans&display=swap'],
+        
         }
       }
     },
