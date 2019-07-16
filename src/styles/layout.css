@@ -14,9 +14,8 @@
 }
 
 .with-sidebar > * > header {
-  color: white;
-  outline: var(--s-5) solid var(--base-color);
-  background-color: gray;
+  color: var(--background-color);
+  background-color: var(--base-color);
   padding: var(--s-1);
   flex-basis: 15rem;
 }

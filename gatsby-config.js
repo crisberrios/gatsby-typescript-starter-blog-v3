@@ -9,9 +9,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
-        google: {
-          families: ['Oswald:600', 'Work Sans&display=swap'],
-        
+        custom: {
+          families: ['Oswald', 'Work Sans'],
+          urls: ['https://fonts.googleapis.com/css?family=Oswald:600|Work+Sans&display=swap&subset=latin-ext']
         }
       }
     },
