@@ -7,6 +7,20 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Oswald`,
+            variants: [`600`]
+          },
+          {
+            family: `Work Sans`,
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,

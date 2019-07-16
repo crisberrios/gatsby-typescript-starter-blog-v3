@@ -35,27 +35,27 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps, {}> {
       <Layout>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
         <h1>{post.frontmatter.title}</h1>
-        <p>
-          {post.frontmatter.date}
-        </p>
+        <p>{post.frontmatter.date}</p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr/>
-        <ul>
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
+        <hr />
+        <nav aria-label="Pagination">
+          <ul className="post-prev-next-links">
+            <li>
+              {previous && (
+                <Link to={previous.fields.slug} rel="prev">
+                  ← {previous.frontmatter.title}
+                </Link>
+              )}
+            </li>
+            <li>
+              {next && (
+                <Link to={next.fields.slug} rel="next">
+                  {next.frontmatter.title} →
+                </Link>
+              )}
+            </li>
+          </ul>
+        </nav>
       </Layout>
     )
   }

@@ -1,0 +1,12 @@
+.post-prev-next-links {
+  display: flex;
+
+}
+.post-prev-next-links > * {
+  display: inline-block;
+  flex: 1;
+  flex-basis: 50%;
+}
+.post-prev-next-links > *:last-child {
+  text-align: right;
+}
