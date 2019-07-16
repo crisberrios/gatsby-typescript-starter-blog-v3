@@ -7,18 +7,12 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: 'gatsby-plugin-web-font-loader',
       options: {
-        fonts: [
-          {
-            family: `Oswald`,
-            variants: [`600`]
-          },
-          {
-            family: `Work Sans`,
-          },
-        ],
-      },
+        google: {
+          families: ['Oswald:600', 'Work Sans']
+        }
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
