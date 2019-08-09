@@ -1,0 +1,40 @@
+.margin-bottom\:sm-1 {
+  margin-bottom: var(--s-5);
+}
+
+.max-width\:measure\/2 {
+  max-width: var(--measure) / 2;
+}
+
+.max-width\:measure\/3 {
+  max-width: var(--measure) / 3;
+}
+
+.max-width\:measure\/5 {
+  max-width: var(--measure) / 5;
+}
+
+.max-width\:50\% {
+  max-width: 50%;
+}
+
+.max-width\:none {
+  max-width: none;
+}
+
+.margin\:auto {
+  margin: auto;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.align-items\:center {
+  align-items: center;
+}
+
+.justify-content\:space-evenly {
+  justify-content: space-evenly;
+}

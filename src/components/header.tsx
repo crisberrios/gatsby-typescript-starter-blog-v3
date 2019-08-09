@@ -12,7 +12,8 @@ const Header: React.FunctionComponent<HeaderProps> = () => (
       query SiteTitleQuery {
         site {
           siteMetadata {
-            title
+            title,
+            author
           }
         }
       }
@@ -23,7 +24,7 @@ const Header: React.FunctionComponent<HeaderProps> = () => (
           <div className="flex-wrap align-items:center">
             <div className="mobile-25-desktop-100">
               <div className="margin:auto profile-image">
-                <Image />
+                <Image filename="avatar.png" alt={data.author} />
               </div>
             </div>
             <div className="mobile-75-desktop-100">
@@ -40,7 +41,7 @@ const Header: React.FunctionComponent<HeaderProps> = () => (
             </div>
           </div>
           <nav>
-            <ul className="flex-wrap flex-wrap-sidebar justify-content:center">
+            <ul className="flex-wrap flex-wrap-sidebar justify-content:space-evenly">
               <li>
                 <a href="/">Articles</a>
               </li>
