@@ -1,5 +1,23 @@
-.profile-image {
+.main-header .profile-image {
   max-width: 5rem;
+}
+
+.main-header a {
+  color: var(--sidebar-color);
+}
+
+.no-sidebar .main-header {
+  padding: var(--s-3);
+  flex-basis: 999rem;
+  max-height: var(--s3);
+}
+
+.no-sidebar .main-header .profile-about {
+  display: none;
+}
+
+.no-sidebar .main-header .profile-image {
+  max-width: 2.5rem;
 }
 
 .profile-image .gatsby-image-wrapper img {
@@ -7,12 +25,27 @@
   border: var(--s-5) solid var(--base-color);
 }
 
-.with-sidebar header a {
-  color: var(--sidebar-color);
-}
-
 .flex-wrap-sidebar > * {
   min-width: fit-content;
   width: calc((var(--sidebar-min-width) - 100%) * 1000);
   max-width: 100%;
+}
+
+.no-sidebar .main-header > * {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.no-sidebar .main-header nav {
+  flex-grow: 1;
+  margin: 0;
+}
+.no-sidebar .main-header nav ul {
+  margin: 0;
+  flex-wrap: nowrap;
+}
+
+.no-sidebar .main-header nav ul > * + * {
+  margin: 0 var(--s0);
 }

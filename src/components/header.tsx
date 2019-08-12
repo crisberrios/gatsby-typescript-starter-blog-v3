@@ -19,15 +19,15 @@ const Header: React.FunctionComponent<HeaderProps> = () => (
       }
     `}
     render={data => (
-      <header>
+      <header className="main-header">
         <div className="center-container stack">
-          <div className="flex-wrap align-items:center">
+          <div className="no-sidebar-flex:1 flex-wrap align-items:center">
             <div className="mobile-25-desktop-100">
               <div className="margin:auto profile-image">
                 <Image filename="avatar.png" alt={data.author} />
               </div>
             </div>
-            <div className="mobile-75-desktop-100">
+            <div className="profile-about mobile-75-desktop-100">
               <h1 className="font-size:lg-2 margin-bottom:sm-1">
                 <Link to="/">{data.site.siteMetadata.title}</Link>
               </h1>
@@ -46,7 +46,7 @@ const Header: React.FunctionComponent<HeaderProps> = () => (
                 <a href="/">Articles</a>
               </li>
               <li>
-                <a href="#">About me</a>
+                <a href="/about">About me</a>
               </li>
               <li>
                 <a href="#">Contact me</a>

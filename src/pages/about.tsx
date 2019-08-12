@@ -1,5 +1,6 @@
 import { graphql, Link } from 'gatsby'
 import * as React from 'react'
+import Image from '../components/image'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
@@ -35,12 +36,12 @@ class IndexPage extends React.Component<IndexPageProps, {}> {
     const posts = data.allMarkdownRemark.edges
 
     return (
-      <Layout>
+      <Layout noSidebar>
         <SEO
           title="All posts"
           keywords={['blog', 'gatsby', 'javascript', 'react']}
         />
-        <h2>All Articles</h2>
+        <h2>About</h2>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (

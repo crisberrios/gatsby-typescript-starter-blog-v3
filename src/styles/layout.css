@@ -1,26 +1,26 @@
-.with-sidebar {
+.main-layout {
   overflow: hidden;
   height: 100%;
 }
 
-.with-sidebar > * {
+.main-layout > * {
   display: flex;
   flex-wrap: wrap;
   height: 100%;
 }
 
-.with-sidebar > * > * {
+.main-layout > * > * {
   flex-grow: 1;
 }
 
-.with-sidebar > * > header {
+.main-layout > * > header {
   color: var(--background-color);
   background-color: var(--base-color);
   padding: var(--s-1);
   flex-basis: 15rem;
 }
 
-.with-sidebar > * > main {
+.main-layout > * > main {
   flex-basis: 0;
   flex-grow: 999;
   min-width: calc(66% - var(--s1));
@@ -28,7 +28,7 @@
   height: 100vh - calc(var(--s1) / 2);
 }
 
-.with-sidebar > * > main > * {
+.main-layout > * > main > * {
   max-width: var(--measure);
 }
 
@@ -72,4 +72,8 @@
   min-width: 75%;
   width: calc((var(--sidebar-min-width) - 100%) * 1000);
   max-width: 100%;
+}
+
+.no-sidebar .no-sidebar-flex\:1 {
+  flex: 1;
 }
