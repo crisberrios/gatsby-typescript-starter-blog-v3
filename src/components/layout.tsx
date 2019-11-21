@@ -3,7 +3,7 @@ import * as React from 'react'
 
 import Header from './header'
 
-const Layout: React.FunctionComponent<{ noSidebar: boolean }> = ({
+const Layout: React.FunctionComponent<{ noSidebar?: boolean }> = ({
   children,
   noSidebar,
 }) => (
