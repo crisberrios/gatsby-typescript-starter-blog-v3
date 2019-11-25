@@ -36,24 +36,31 @@ class IndexPage extends React.Component<IndexPageProps, {}> {
     const posts = data.allMarkdownRemark.edges
 
     return (
-      <Layout noSidebar>
+      <Layout noSidebar={true}>
         <SEO
-          title="All posts"
+          title="About"
           keywords={['blog', 'gatsby', 'javascript', 'react']}
         />
         <h2>About</h2>
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h3 className="margin-bottom:sm-1">
-                <Link to={node.fields.slug}>{title}</Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
-          )
-        })}
+        <p>
+          Lorem ipsum dolor amet wolf fanny pack ut distillery, chambray hell of
+          leggings duis taxidermy readymade pour-over. Non hell of hot chicken
+          biodiesel banh mi food truck paleo vaporware lyft culpa. Selvage venmo
+          in meditation, id beard synth cillum organic crucifix. Ullamco
+          jianbing intelligentsia ipsum viral, pok pok farm-to-table knausgaard
+          hell of pariatur in qui occupy. Echo park velit try-hard tote bag
+          cloud bread officia meditation.
+        </p>
+        <p>
+          Offal tacos fugiat polaroid cillum street art, hell of hexagon dolor
+          subway tile organic readymade. Lo-fi nostrud thundercats, microdosing
+          squid seitan man braid whatever offal meh laborum. Gochujang banh mi
+          quinoa duis wayfarers lyft lomo fingerstache green juice XOXO
+          pour-over cornhole bicycle rights tumeric ennui. Ut tote bag ugh
+          consectetur sed voluptate poke ea lorem minim kombucha pour-over
+          franzen etsy locavore. Culpa meditation marfa, echo park pickled
+          aliqua cillum ethical hell of est pinterest duis organic kogi.
+        </p>
       </Layout>
     )
   }
